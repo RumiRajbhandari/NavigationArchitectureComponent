@@ -8,12 +8,19 @@
               android:name="supervisor.rosia.com.navigationcompdemo.MainFragment"
               android:label="fragment_main"
               tools:layout="@layout/fragment_main">
-        <action android:id="@+id/toAccount" app:destination="@id/accountFragment"/>
-        <action android:id="@+id/toSettings" app:destination="@id/settingFragment"/>
+        <action android:id="@+id/toAccount" app:destination="@id/accountFragment"
+                app:enterAnim="@anim/slide_in_to_left" app:popUpTo="@+id/accountFragment"
+                app:launchSingleTop="false" app:exitAnim="@anim/slide_out_to_left"
+                app:popExitAnim="@anim/slide_out_to_right" app:popEnterAnim="@anim/slide_in_to_right"/>
+        <action android:id="@+id/toSettings" app:destination="@id/settingFragment"
+                app:enterAnim="@anim/slide_in_to_left" app:exitAnim="@anim/slide_out_to_left"
+                app:popEnterAnim="@anim/slide_in_to_right" app:popExitAnim="@anim/slide_out_to_right"/>
     </fragment>
     <fragment android:id="@+id/accountFragment" android:name="supervisor.rosia.com.navigationcompdemo.AccountFragment"
               android:label="fragment_account" tools:layout="@layout/fragment_account">
-        <action android:id="@+id/action_accountFragment_to_nameFragment" app:destination="@id/nameFragment"/>
+        <action android:id="@+id/action_accountFragment_to_nameFragment" app:destination="@id/nameFragment"
+                app:enterAnim="@anim/slide_in_to_left" app:exitAnim="@anim/slide_out_to_left"
+                app:popExitAnim="@anim/slide_out_to_right" app:popEnterAnim="@anim/slide_in_to_right"/>
     </fragment>
     <fragment android:id="@+id/settingFragment" android:name="supervisor.rosia.com.navigationcompdemo.SettingFragment"
               android:label="fragment_setting" tools:layout="@layout/fragment_setting">
